@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-#coding:utf-8
+
 import win32api
 import time
 import win32con
@@ -8,7 +7,6 @@ import os
 import io
 import sys
 import datetime
-# sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 # Û±Í“∆∂Ø
 def mouse_move(x,y):
     win32api.SetCursorPos([x,y])
@@ -101,9 +99,7 @@ while True:
         time.sleep(5)
         mouse_click()
         end_program("msedge.exe")
-        end_program("SunloginClient.exe")
-        time.sleep(10)
-        open_app("D:\Sunflower\SunloginClient\SunloginClient.exe")
+        reboot()
         time.sleep(20)
     else:
         time.sleep(360)
