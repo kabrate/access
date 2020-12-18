@@ -15,6 +15,8 @@ def reboot():
     time.sleep(10)
     open_app("E:\Sunflower\SunloginClient\SunloginClient.exe")
 while True:
+    print("开始计时")
     time.sleep(86400)
+    print("开始重置")
     reboot()
 
