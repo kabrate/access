@@ -7,11 +7,11 @@ import os
 import io
 import sys
 import datetime
-#Êó±êÒÆ¶¯
+#é¼ æ ‡ç§»åŠ¨
 def mouse_move(x,y):
     win32api.SetCursorPos([x,y])
 
-#Êó±êµã»÷£¬Ä¬ÈÏ×ó¼ü
+#é¼ æ ‡ç‚¹å‡»ï¼Œé»˜è®¤å·¦é”®
 def mouse_click(click_type="left"):
     if click_type=="left":
         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP | win32con.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)   
@@ -19,7 +19,7 @@ def mouse_click(click_type="left"):
         win32api.mouse_event(win32con.MOUSEEVENTF_RIGHTUP | win32con.MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0)
     time.sleep(0.01)
 
-#Êó±êË«»÷»÷£¬Ä¬ÈÏ×ó¼ü
+#é¼ æ ‡åŒå‡»å‡»ï¼Œé»˜è®¤å·¦é”®
 def mouse_double_click(click_type="left"):
     if click_type=="left":
         win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP | win32con.MOUSEEVENTF_LEFTDOWN, 0, 0, 0, 0)
@@ -55,7 +55,7 @@ def is_connected(url):
         return False
 
 
-# ÊÇ·ñÁ¬½ÓÍøÂç
+# æ˜¯å¦è¿æ¥ç½‘ç»œ
 def  isConnected():
   import requests
   try:
@@ -64,13 +64,13 @@ def  isConnected():
         return False
   return True
 
-# ¹Ø±ÕÆäËûÓ¦ÓÃ³ÌĞò
-# pro_name:½«Òª¹Ø±ÕµÄ³ÌĞò
+# å…³é—­å…¶ä»–åº”ç”¨ç¨‹åº
+# pro_name:å°†è¦å…³é—­çš„ç¨‹åº
 def end_program(pro_name):
     os.system('%s%s' % ("taskkill /F /IM ", pro_name))
 
 
-# ´ò¿ªÒ»¸öÓ¦ÓÃ
+# æ‰“å¼€ä¸€ä¸ªåº”ç”¨
 def open_app(app_dir):
   os.startfile(app_dir)
 
