@@ -3,6 +3,7 @@ import requests
 import webbrowser
 import os
 import time
+
 def openwifi():
     os.system('netsh wlan connect name=ncst.edu.cn')
     time.sleep(1)
