@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0eaad2c2-663e-4a03-8a00-298293a49c2e</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>net2.py</StartupFile>
+    <StartupFile>haiyamiti.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -23,6 +23,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="access.py" />
+    <Compile Include="net3.py" />
+    <Compile Include="haiyamiti.py" />
+    <Compile Include="reconnect1.py" />
+    <Compile Include="reconnect.py" />
     <Compile Include="net2.py" />
     <Compile Include="net.py">
       <SubType>Code</SubType>

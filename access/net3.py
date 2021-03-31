@@ -3,43 +3,10 @@ import webbrowser
 import os
 import datetime
 import requests
-import win32api
-import win32con
 #连接wifi
 def openwifi():
     os.system('netsh wlan connect name=ncst.edu.cn')
     time.sleep(1)
-
-# 是否连接网络
-def  isConnected():
-  import requests
-  try:
-        html = requests.get("http://www.baidu.com", timeout=2)
-  except:
-        return False
-  return True
-
-
-# 关闭其他应用程序
-# pro_name:将要关闭的程序
-def end_program(pro_name):
-    os.system('%s%s' % ("taskkill /F /IM ", pro_name))
-
-
-# 打开一个应用
-def open_app(app_dir):
-  os.startfile(app_dir)
-
-def reboot():
-    end_program("SunloginClient.exe")
-    time.sleep(10)
-    open_app("D:\Sunflower\SunloginClient\SunloginClient.exe")
-
-def key_event(input_key):
-    win32api.keybd_event(input_key, 0, 0, 0)#按下
-    time.sleep(0.01)
-    win32api.keybd_event(input_key, 0, 1, 0)#松开
-    time.sleep(0.3)
 
 post_addr="http://172.30.0.11/eportal/InterFace.do?method=login"
 post_header={  
@@ -66,27 +33,18 @@ post_data={
 'validcode': '',
 'passwordEncrypt': 'true',
     }
-while True:
-    t = isConnected()
-    print(t)
 
-    if t == 0:
-        openwifi()
-        time.sleep(3)
-        webbrowser.open("http://172.30.0.11")
-        time.sleep(3)
-        z=requests.post(post_addr,data=post_data,headers=post_header)
-        end_program("msedge.exe")
-        time.sleep(5)
-        reboot()
-        time.sleep(5)
-        key_event(37)#按下左键
-        time.sleep(3)
-        key_event(13)#按下回车
-    else:
-        now_time = datetime.datetime.now()
-        print(str(now_time) + ' accessing!')
-        time.sleep(3600)
+while True:
+    print('打开wifi')
+    openwifi()
+    time.sleep(3)
+    print('发送连接请求')
+    z=requests.post(post_addr,data=post_data,headers=post_header)
+    time.sleep(3)
+    now_time = datetime.datetime.now()
+    print(str(now_time) + ' 已连接!')
+    time.sleep(3600)
+
 
 
 
